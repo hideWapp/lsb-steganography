@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lsb-steganography"
+version = "1.0.0"
+description = "Hide text inside images with least-significant-bit steganography."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["pillow>=10", "numpy>=1.26"]
+keywords = ["steganography", "lsb", "image", "png"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+steganography = "steganography.cli:main"
+
+[tool.setuptools]
+packages = ["steganography"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
